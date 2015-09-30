@@ -5,12 +5,12 @@
 Summary:	SoX Resampler library
 Summary(pl.UTF-8):	Biblioteka resamplera SoX
 Name:		soxr
-Version:	0.1.1
-Release:	2
+Version:	0.1.2
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/soxr/%{name}-%{version}-Source.tar.xz
-# Source0-md5:	805651a245ead381c82fad6247af5968
+# Source0-md5:	0866fc4320e26f47152798ac000de1c0
 URL:		http://soxr.sourceforge.net/
 BuildRequires:	cmake >= 2.8
 %{?with_gomp:BuildRequires:	gcc >= 6:4.2}
