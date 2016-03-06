@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	gomp	# OpenMP support
+%bcond_without	openmp	# OpenMP support
 #
 Summary:	SoX Resampler library
 Summary(pl.UTF-8):	Biblioteka resamplera SoX
@@ -13,8 +13,8 @@ Source0:	http://downloads.sourceforge.net/soxr/%{name}-%{version}-Source.tar.xz
 # Source0-md5:	0866fc4320e26f47152798ac000de1c0
 URL:		http://soxr.sourceforge.net/
 BuildRequires:	cmake >= 2.8
-%{?with_gomp:BuildRequires:	gcc >= 6:4.2}
-%{?with_gomp:BuildRequires:	libgomp-devel}
+%{?with_openmp:BuildRequires:	gcc >= 6:4.2}
+%{?with_openmp:BuildRequires:	libgomp-devel}
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,7 +46,7 @@ Pliki nagłówkowe biblioteki SoX Resampler.
 
 %build
 %cmake . \
-	%{!?with_gomp:-DWITH_OPENMP=OFF}
+	%{!?with_openmp:-DWITH_OPENMP=OFF}
 %{__make}
 
 %install
