@@ -11,6 +11,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/soxr/%{name}-%{version}-Source.tar.xz
 # Source0-md5:	3f16f4dcb35b471682d4321eda6f6c08
+Patch0:		%{name}-link.patch
 URL:		http://soxr.sourceforge.net/
 BuildRequires:	cmake >= 3.1
 %{?with_openmp:BuildRequires:	gcc >= 6:4.2}
@@ -27,7 +28,7 @@ PCM-encoded audio.
 %description -l pl.UTF-8
 Biblioteka SoX Resampler (libsoxr) wykonuje jednowymiarową konwersję
 częstotliwości próbkowania - może być używana na przykład do
-resamplowania dźwięku kodowanego PCM. 
+resamplowania dźwięku kodowanego PCM.
 
 %package devel
 Summary:	Header files for SoX Resampler library
@@ -43,6 +44,7 @@ Pliki nagłówkowe biblioteki SoX Resampler.
 
 %prep
 %setup -q -n %{name}-%{version}-Source
+%patch0 -p1
 
 %build
 %cmake . \
