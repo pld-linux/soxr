@@ -44,7 +44,7 @@ Pliki nagłówkowe biblioteki SoX Resampler.
 
 %prep
 %setup -q -n %{name}-%{version}-Source
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %cmake . \
