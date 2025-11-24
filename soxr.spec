@@ -16,6 +16,7 @@ URL:		http://soxr.sourceforge.net/
 BuildRequires:	cmake >= 3.1
 %{?with_openmp:BuildRequires:	gcc >= 6:4.2}
 %{?with_openmp:BuildRequires:	libgomp-devel}
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
